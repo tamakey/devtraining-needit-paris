@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.NeedItUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Utils Script Include for the NeedIt application.</description>
+        <name>NeedItUtils</name>
+        <script><![CDATA[var NeedItUtils = Class.create();
+NeedItUtils.prototype = {
+
+	initialize: function(){
+		this.rightnow = new GlideDateTime();
+	},
+
+	isDatePast: function(strDate){
+		var testdate = new GlideDateTime(strDate);
+		if (testdate.before(this.rightnow)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	},
+
+	isDateToday: function(strDate){
+		var testdate = new GlideDateTime(strDate);
+		if(testdate.compareTo(this.rightnow) == 0){
+			return true;
+		}
+		else {
+			return false;
+		}
+	},
+
+	type: 'NeedItUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>NRIWPS_kuranari</sys_created_by>
+        <sys_created_on>2020-12-27 05:38:50</sys_created_on>
+        <sys_id>f5e3ff8a1b5d6050e05f43b2cc4bcb02</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>NeedItUtils</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_f5e3ff8a1b5d6050e05f43b2cc4bcb02</sys_update_name>
+        <sys_updated_by>NRIWPS_kuranari</sys_updated_by>
+        <sys_updated_on>2020-12-27 06:04:39</sys_updated_on>
+    </sys_script_include>
+</record_update>
